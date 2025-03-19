@@ -1,4 +1,7 @@
-import { Flex, Menu, MenuProps } from "antd";
+import { Col, Flex, Input, Menu, MenuProps, Row, Space } from "antd";
+import { TbSearch, TbShoppingCart, TbUserCircle } from "react-icons/tb";
+import LogoMark from "../../assets/Logomark.svg";
+import { useNavigate } from "react-router-dom";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -22,34 +25,67 @@ const items: MenuItem[] = [
 ];
 
 export const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <Flex justify="center">
-      <Flex
-        style={{
-          marginTop: 40,
-          marginBottom: 16,
-          width: "90vw",
-          height: 84,
-          paddingInline: 24,
-        }}
-        align="center"
-        // justify="space-between"
-      >
-        <Flex align="center">
+      <Row style={{ width: "90vw", marginTop: 40 }}>
+        <Col span={8}>
           <div
             style={{
-              width: 40,
-              height: 40,
-              background: "#0e1422",
-              marginRight: 12,
-              borderRadius: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center"
             }}
+          >
+            <img src={LogoMark} alt="Logo Mark" />
+            <p style={{ marginLeft: 12, fontWeight: 700, fontSize: 20 }}>
+              Ecommerce
+            </p>
+          </div>
+        </Col>
+        <Col
+          span={8}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Menu
+            mode="horizontal"
+            style={{ width: 320 }}
+            items={items}
+            onClick={(item) => navigate(`/${item.key}`)}
           />
-          <p style={{ fontWeight: 700, fontSize: 20 }}>Ecommerce</p>
-        </Flex>
-        <Menu mode="horizontal" items={items} />
-        <p>Search..</p>
-      </Flex>
+        </Col>
+        <Col
+          span={8}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Space size={32}>
+            <Input
+              addonBefore={<TbSearch />}
+              style={{ width: 300 }}
+              placeholder="Search products"
+            />
+            <TbShoppingCart
+              size={24}
+              color="#5C5F6A"
+              style={{ cursor: "pointer" }}
+            />
+            <TbUserCircle
+              size={24}
+              color="#5C5F6A"
+              style={{ cursor: "pointer" }}
+            />
+          </Space>
+        </Col>
+      </Row>
     </Flex>
   );
 };

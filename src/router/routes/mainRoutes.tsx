@@ -1,4 +1,6 @@
 import {
+  AboutPage,
+  ContactPage,
   ErrorPage,
   HomePage,
   LoginPage,
@@ -23,7 +25,7 @@ export const routes: Route[] = [
     element: <LoginPage />,
   },
   {
-    path: "/products-list",
+    path: "/categories",
     element: <ProductListPage />,
   },
   {
@@ -37,5 +39,13 @@ export const routes: Route[] = [
   {
     path: "/error",
     element: <ErrorPage />
-  }
+  },
+  {
+    path: "/about",
+    element: <AboutPage />
+  },
+  {
+    path: "/contact",
+    element: <ContactPage />
+  },
 ];

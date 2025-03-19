@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import { Header, NotificationBar } from "../header";
+import { Footer } from "../footer";
 
 interface Props {
   children: JSX.Element;
@@ -13,7 +14,7 @@ export const MainLayout = ({ children }: Props) => {
       />
       <Header />
       {children}
-      <h2>Footer</h2>
+      <Footer />
     </div>
   );
 };
