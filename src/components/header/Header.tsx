@@ -29,13 +29,12 @@ export const Header = () => {
 
   return (
     <Flex justify="center">
-      <Row style={{ width: "90vw", marginTop: 40 }}>
+      <Row style={{ width: "80vw", marginTop: 40 }}>
         <Col span={8}>
           <div
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
             }}
           >
             <img src={LogoMark} alt="Logo Mark" />
@@ -64,7 +63,7 @@ export const Header = () => {
           style={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
+            justifyContent: "end",
           }}
         >
           <Space size={32}>
