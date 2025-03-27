@@ -1,12 +1,11 @@
 import { Button, Col, Flex, Input, Row, Space } from "antd";
-
-import LogoFooter from "../../assets/LogomarkFooter.svg";
 import LogoGithub from "../../assets/Github.svg";
 import LogoInstagram from "../../assets/Instagram.svg";
 import LogoYouTube from "../../assets/Youtube.svg";
 import LogoAmex from "../../assets/Amex.svg";
 import LogoMasterCard from "../../assets/Mastercard.svg";
 import LogoVisa from "../../assets/Visa.svg";
+import { Logo } from "../layout";
 
 interface Props {
   type?: "default" | "without-newsletter";
@@ -56,17 +55,7 @@ export const Footer = ({ type = "default" }: Props) => {
       )}
       <Row style={{ width: "80vw", paddingBlock: 80 }}>
         <Col span={8}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img src={LogoFooter} alt="Logo Footer" />
-            <p style={{ marginLeft: 12, fontWeight: 700, fontSize: 20 }}>
-              Ecommerce
-            </p>
-          </div>
+          <Logo type="footer" />
           <div
             style={{
               display: "flex",
@@ -89,7 +78,7 @@ export const Footer = ({ type = "default" }: Props) => {
           </Space>
         </Col>
         <Col span={8}>
-          <Row gutter={72} justify="center">
+          <Row gutter={40} justify="center">
             <Col>
               <p
                 style={{ color: "#878A92", fontWeight: 500, marginBottom: 40 }}
@@ -158,9 +147,6 @@ export const Footer = ({ type = "default" }: Props) => {
           </Space>
         </Col>
       </Row>
-      {/* <Row>
-        <p>© 2023 DevCut. All rights reserved.</p>
-      </Row> */}
     </Flex>
   );
 };

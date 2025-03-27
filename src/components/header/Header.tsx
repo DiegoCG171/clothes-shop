@@ -1,70 +1,39 @@
-import { Col, Flex, Input, Menu, MenuProps, Row, Space } from "antd";
-import { TbSearch, TbShoppingCart, TbUserCircle } from "react-icons/tb";
-import LogoMark from "../../assets/Logomark.svg";
+import { Col, Flex, Input, Menu, Row, Space } from "antd";
+import { TbSearch } from "react-icons/tb";
+
 import { useNavigate } from "react-router-dom";
+import { menuItems } from "./";
+import { Logo } from "../layout";
+import { userOptions } from "./data/UserOptions";
 
-type MenuItem = Required<MenuProps>["items"][number];
-
-const items: MenuItem[] = [
-  {
-    label: "Home",
-    key: "home",
-  },
-  {
-    label: "Categories",
-    key: "categories",
-  },
-  {
-    label: "About",
-    key: "about",
-  },
-  {
-    label: "Contact",
-    key: "contact",
-  },
-];
 
 export const Header = () => {
   const navigate = useNavigate();
 
+  const handleNavigate = (path: string) => {
+    navigate(`/${path}`)
+  }
+
   return (
     <Flex justify="center">
-      <Row style={{ width: "80vw", marginTop: 40 }}>
+      <Row className="header">
         <Col span={8}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <img src={LogoMark} alt="Logo Mark" />
-            <p style={{ marginLeft: 12, fontWeight: 700, fontSize: 20 }}>
-              Ecommerce
-            </p>
-          </div>
+          <Logo />
         </Col>
         <Col
           span={8}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className="header_item_container-center"
         >
           <Menu
             mode="horizontal"
             style={{ width: 320 }}
-            items={items}
-            onClick={(item) => navigate(`/${item.key}`)}
+            items={menuItems}
+            onClick={(item) => handleNavigate(item.key)}
           />
         </Col>
         <Col
           span={8}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "end",
-          }}
+          className="header_menu_container header_justify-end"
         >
           <Space size={32}>
             <Input
@@ -72,16 +41,9 @@ export const Header = () => {
               style={{ width: 300 }}
               placeholder="Search products"
             />
-            <TbShoppingCart
-              size={24}
-              color="#5C5F6A"
-              style={{ cursor: "pointer" }}
-            />
-            <TbUserCircle
-              size={24}
-              color="#5C5F6A"
-              style={{ cursor: "pointer" }}
-            />
+            {
+              userOptions.map((options) => (options.icon))
+            }
           </Space>
         </Col>
       </Row>
