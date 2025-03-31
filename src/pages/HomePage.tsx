@@ -1,7 +1,11 @@
+import { BestSellingProductList } from "../components/products/BestSellingProductList"
 
 
 export const HomePage = () => {
   return (
-    <div>HomePage</div>
+    <div>
+      <BestSellingProductList />
+      <BestSellingProductList type="showcase"/>
+    </div>
   )
 }
