@@ -13,7 +13,7 @@ interface Props {
 
 export const Footer = ({ type = "default" }: Props) => {
   return (
-    <Flex align="center" vertical>
+    <Flex align="center" vertical style={{marginTop: 160}}>
       {type === "default" && (
         <Row
           style={{
