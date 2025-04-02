@@ -4,6 +4,7 @@ import { TextSection } from "./HomePage/TextSection";
 import { ImageSection } from "./HomePage/ImageSection";
 import { containerStyle, rowStyle } from "./HomePage/styles";
 import Image from "./Img/Hero Image.svg"; 
+import {FashionSection} from '../components/FashionSection'; // 
 
 export const HomePage = () => {
   return (
@@ -17,6 +18,12 @@ export const HomePage = () => {
     <div>
         <BestSellingProductList />
         <BestSellingProductList type="showcase" />
-      </div></>
+      </div>
+      
+      <div>
+         <FashionSection /> 
+             </div>
+      
+      </>
   )
 }
