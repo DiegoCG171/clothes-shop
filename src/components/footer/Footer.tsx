@@ -17,7 +17,7 @@ export const Footer = ({ type = "default" }: Props) => {
       {type === "default" && (
         <Row
           style={{
-            width: "100vw",
+            width: "100%",
             paddingBlock: 60,
             paddingInline: 190,
             background: "#F6F6F6",

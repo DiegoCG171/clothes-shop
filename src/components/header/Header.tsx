@@ -15,7 +15,7 @@ export const Header = () => {
   }
 
   return (
-    <Flex justify="center">
+    <Flex justify="center" style={{marginBottom: 48}}>
       <Row className="header">
         <Col span={8}>
           <Logo />

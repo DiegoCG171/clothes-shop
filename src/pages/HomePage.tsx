@@ -1,29 +1,23 @@
-import { BestSellingProductList } from "../components/products/BestSellingProductList"
+import { BestSellingProductList } from "../components/products/BestSellingProductList";
 import { Row } from "antd";
 import { TextSection } from "./HomePage/TextSection";
 import { ImageSection } from "./HomePage/ImageSection";
 import { containerStyle, rowStyle } from "./HomePage/styles";
-import Image from "./Img/Hero Image.svg"; 
-import {FashionSection} from '../components/FashionSection'; // 
+import Image from "./Img/Hero Image.svg";
+import { FashionSection } from "../components/FashionSection"; //
 
 export const HomePage = () => {
   return (
-    <><div style={containerStyle}>
-      <Row style={rowStyle} align="middle">
-        <TextSection />
-        <ImageSection imageUrl={Image} />
-      </Row>
-    </div>
-
-    <div>
-        <BestSellingProductList />
-        <BestSellingProductList type="showcase" />
+    <>
+      <div style={containerStyle}>
+        <Row style={rowStyle} align="middle">
+          <TextSection />
+          <ImageSection imageUrl={Image} />
+        </Row>
       </div>
-      
-      <div>
-         <FashionSection /> 
-             </div>
-      
-      </>
-  )
-}
+        <BestSellingProductList />
+        <FashionSection />
+        <BestSellingProductList type="showcase" />
+    </>
+  );
+};
