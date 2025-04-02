@@ -27,7 +27,7 @@ export const BestSellingProductList = ({ type = "best-selling" }: Props) => {
   };
 
   return (
-    <Space direction="vertical" style={{ width: "100%", marginTop: 32 }}>
+    <Space direction="vertical" style={{ width: "100%", marginTop: 160 }}>
       {type === "best-selling" ? (
         <Title
           level={3}

@@ -1,4 +1,4 @@
-import { JSX, useEffect, useState } from "react";
+import { JSX, useState } from "react";
 import { Header, NotificationBar } from "../header";
 import { Footer } from "../footer";
 
@@ -10,11 +10,7 @@ type FooterTypes = "default" | "without-newsletter";
 
 export const MainLayout = ({ children }: Props) => {
   
-  const [typeFooter, setTypeFooter] = useState<FooterTypes>('default');
-
-  useEffect(() => {
-      setTypeFooter('without-newsletter')
-  }, []);
+  const [typeFooter] = useState<FooterTypes>('default');
 
   return (
     <div>
