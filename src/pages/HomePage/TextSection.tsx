@@ -1,29 +1,26 @@
 import { Button, Col, Flex, Typography } from "antd";
-import { useNavigate } from "react-router-dom";
-import { titleStyle, subtitleStyle, buttonStyle, textColumnStyle } from "./styles";
+import "./TextSection.css";
 
 const { Title, Text } = Typography;
 
 export const TextSection = () => {
-  const navigate = useNavigate();
 
   return (
-    <Col span={12} style={textColumnStyle}>
-      <Flex vertical style={{ maxWidth: "500px" }}>
-        <Title level={1} style={titleStyle}>
+    <Col span={12} className="text-column-style">
+      <Flex vertical className="text-container">
+        <Title  className="title-style">
           Fresh Arrivals Online
         </Title>
         
-        <Text style={subtitleStyle}>
+        <Text className="subtitle-style">
           Discover Our Newest Collection Today.
         </Text>
         
         <Button 
           size="large"
-          onClick={() => navigate("/collection")}
-          style={buttonStyle}
+          className="button-style"
         >
-          View Collection <span style={{ fontSize: "18px" }}>→</span>
+          View Collection  <span className="button-arrow"> → </span>
         </Button>
       </Flex>
     </Col>
