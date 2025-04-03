@@ -1,0 +1,33 @@
+
+.text-column-style {
+  padding-left: 10%;
+}
+
+.text-container {
+  max-width: 500px;
+}
+
+.title-style {
+  font-family: 'Inter', sans-serif;
+  color: #0E1422;
+}
+
+.subtitle-style {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 40px;
+  color: #5C5F6A;
+}
+
+.button-style {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: #0E1422;
+  color: #fff;
+  padding: 0 20px;      
+  height: 36px;         
+  width: fit-content;  
+}
+
+.button-arrow {
+  font-size: 20px;
+}
