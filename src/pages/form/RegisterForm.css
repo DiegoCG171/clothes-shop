@@ -1,0 +1,43 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+}
+
+.register-form {
+  width: 50%;
+  max-width: 400px;
+  padding: 0 16px;
+}
+
+.terms-text {
+  font-size: 12px;
+  margin: 10px 0 30px;
+  color: #5C5F6A;
+  
+}
+
+
+.register-button {
+  background-color: #0f0f1d;
+  height: 40px;
+  font-weight: 500;
+  height: 44px;
+}
+
+.link-text {
+  font-size: 12px;
+  margin: 10px 0 30px;
+  color: #5C5F6A;
+  text-align: center;
+}  
+.label-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #474B57; 
+}
+.input {
+  width: 370px;
+  height: 45px;
+}
+
