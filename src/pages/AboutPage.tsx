@@ -1,4 +1,4 @@
-import {RegisterForm} from "./form/RegisterForm"
+import {RegisterForm} from "./RegisterForm"
 
 
 export const AboutPage = () => {

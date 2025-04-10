@@ -1,6 +1,6 @@
 import { BestSellingProductList } from "../components/products/BestSellingProductList";
-import { FashionSection } from "../components/FashionSection"; //
-import { HeroPage } from "./HomePage/HeroPage";
+import { FashionSection } from "../components/FashionSection";
+import { HeroPage } from "../components/HomePage/hero-section";
 
 export const HomePage = () => {
   return (

@@ -1,8 +1,8 @@
 import { Col } from "antd";
-import Ellipse from '../Img/Ellipse.svg';
-import BurstPucker from '../Img/Burst-pucker.svg';
-import HeroImage from '../Img/Hero Image.svg';
-import "./ImageSection.css";
+import Ellipse from '../../pages/Img/Ellipse.svg';
+import BurstPucker from '../../pages/Img/Burst-pucker.svg';
+import HeroImage from '../../pages/Img/Hero Image.svg';
+import "../../styles/components/hero-section/image-section.css";
 
 export const ImageSection = () => { 
   return (

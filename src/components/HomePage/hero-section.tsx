@@ -1,7 +1,7 @@
 import { Row } from "antd";
-import { TextSection } from "./TextSection";
-import { ImageSection } from "./ImageSection"; 
-import "./HeroSection.css";
+import { TextSection } from "./text-section";
+import { ImageSection } from "./image-section"; 
+import "../../styles/components/hero-section/hero-section.css";
 
 export const HeroPage = () => {
     return (

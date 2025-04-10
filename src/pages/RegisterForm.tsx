@@ -1,8 +1,7 @@
 
 import { Form, Input, Button, Typography } from 'antd';
-import './RegisterForm.css';
-
-const { Text } = Typography;
+import "../styles/components/registro/register-form.css";
+const { Text,Link } = Typography;
 
 export const RegisterForm = () => {
   return (
@@ -22,7 +21,7 @@ export const RegisterForm = () => {
 
         <div className="terms-text">
           <Text type="secondary">
-          By creating an account you agree with our Terms of Service, Privacy Policy,
+          By creating an account you agree with our <Link> Terms of Service, Privacy Policy,</Link> 
           </Text>
         </div>
 
@@ -34,7 +33,7 @@ export const RegisterForm = () => {
 
         <div className="link-text ">
           <Text type="secondary">
-          Already have an account? Log in
+          Already have an account? <Link>Log in</Link>
           </Text>
         </div>
       </Form>

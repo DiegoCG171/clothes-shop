@@ -1,5 +1,5 @@
 import { Button, Col, Flex, Typography } from "antd";
-import "./TextSection.css";
+import "../../styles/components/hero-section/text-section.css";
 
 const { Title, Text } = Typography;
 
