@@ -3,7 +3,6 @@ import {
   ContactPage,
   ErrorPage,
   HomePage,
-  LoginPage,
   ProductListPage,
   ProductPage,
   ProfilePage,
@@ -15,14 +14,10 @@ interface Route {
   element: JSX.Element;
 }
 
-export const routes: Route[] = [
+export const mainRoutes: Route[] = [
   {
     path: "/home",
     element: <HomePage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
   },
   {
     path: "/categories",
