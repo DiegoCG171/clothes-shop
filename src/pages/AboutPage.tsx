@@ -1,6 +1,8 @@
+import {RegisterForm} from "./RegisterForm"
+
 
 export const AboutPage = () => {
   return (
-    <div>About - Page</div>
+    <RegisterForm></RegisterForm>
   )
 }
