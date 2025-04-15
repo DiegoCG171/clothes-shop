@@ -19,7 +19,7 @@ export const Footer = ({ type = "default" }: Props) => {
           style={{
             width: "100%",
             paddingBlock: 60,
-            paddingInline: 190,
+            paddingInline: 110,
             background: "#F6F6F6",
           }}
         >
@@ -53,7 +53,7 @@ export const Footer = ({ type = "default" }: Props) => {
           </Col>
         </Row>
       )}
-      <Row style={{ width: "80vw", paddingBlock: 80 }}>
+      <Row style={{ width: "100%", paddingBlock: 80, paddingInline: 110 }}>
         <Col span={8}>
           <Logo type="footer" />
           <div

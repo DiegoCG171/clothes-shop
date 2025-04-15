@@ -27,8 +27,8 @@ export const BestSellingProductList = ({ type = "best-selling" }: Props) => {
   };
 
   return (
-    <Row justify="center">
-      <Space direction="vertical" style={{ marginTop: 80 }}>
+    <Row style={{paddingInline: 110}}>
+      <Space direction="vertical" style={{ marginTop: 80, width: '100%' }}>
         {type === "best-selling" ? (
           <Title
             level={3}
@@ -67,10 +67,9 @@ export const BestSellingProductList = ({ type = "best-selling" }: Props) => {
           </Space>
         )}
         <Row
-          justify="center"
+          justify="space-between"
           align="middle"
-          gutter={28}
-          style={{ minHeight: 400 }}
+          style={{ minHeight: 400, width: '100%' }}
         >
           {productList.map((product) => (
             <Col key={product.title}>

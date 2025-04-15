@@ -1,5 +1,5 @@
 import { Button, Form, Input, Typography } from 'antd';
-import './LoginForm.css';
+// import './LoginForm.css';
 
 const { Link, Text } = Typography;
 

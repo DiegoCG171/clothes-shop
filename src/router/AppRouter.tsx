@@ -5,10 +5,15 @@ import { PrivateRouter } from "./PrivateRouter";
 import { MainRouter } from "./MainRouter";
 
 export const AppRouter = () => {
-  const idUser = "as";
+  const idUser = "s";
 
   return (
-    <BrowserRouter>
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      }}
+    >
       <Routes>
         <Route
           path="/auth/*"
