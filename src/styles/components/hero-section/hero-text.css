@@ -1,0 +1,33 @@
+
+.hero-text-column {
+  padding-left: 110px;
+}
+
+.hero-text-container {
+  max-width: 500px;
+}
+
+.hero-title {
+  font-family: 'Inter', sans-serif;
+  color: #0E1422;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 40px;
+  color: #5C5F6A;
+}
+
+.hero-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  background: #0E1422;
+  color: #fff;
+  padding: 0 20px;      
+  height: 36px;         
+  width: fit-content;  
+}
+
+.hero-button-arrow {
+  font-size: 20px;
+}

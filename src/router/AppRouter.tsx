@@ -1,19 +1,37 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
-import { routes } from "./routes/"
-import { MainLayout } from "../components/layout";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { PublicRouter } from "./PublicRouter";
+import { AuthRouter } from "./AuthRouter";
+import { PrivateRouter } from "./PrivateRouter";
+import { MainRouter } from "./MainRouter";
 
 export const AppRouter = () => {
+  const idUser = "s";
+
   return (
-    <BrowserRouter>
-     <MainLayout >
+    <BrowserRouter
+      future={{
+        v7_relativeSplatPath: true,
+        v7_startTransition: true,
+      }}
+    >
       <Routes>
-        {routes.map((route) => (
-          <Route key={route.path} path={route.path} element={route.element} />
-        ))}
-        <Route path="*" element={<Navigate to="/home" replace />} />
+        <Route
+          path="/auth/*"
+          element={
+            <PublicRouter idUser={idUser}>
+              <AuthRouter />
+            </PublicRouter>
+          }
+        />
+        <Route
+          path="/*"
+          element={
+            <PrivateRouter idUser={idUser}>
+              <MainRouter />
+            </PrivateRouter>
+          }
+        />
       </Routes>
-     </MainLayout>
     </BrowserRouter>
   );
 };

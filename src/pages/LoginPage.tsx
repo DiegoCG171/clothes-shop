@@ -1,7 +1,10 @@
+import { LoginForm } from "../components/auth/login/LoginForm";
 
 
 export const LoginPage = () => {
   return (
-    <div>LoginPage</div>
-  )
-}
+    <div className="login-container">
+      <LoginForm />
+    </div>
+  );
+};
