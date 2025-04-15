@@ -1,11 +1,13 @@
-import { FashionSection } from "../components/FashionSection";
-import { HeroPage } from "../components/HomePage/hero-section";
+import { HeroSection } from "../components/hero-section/";
+import { FashionSection } from "../components/fashion-section/FashionSection";
 import { BestSellingProductList } from "../components/products/BestSellingProductList";
+import { FeaturesSection } from "../components/features-section";
 
 export const HomePage = () => {
   return (
     <>
-        <HeroPage></HeroPage>
+        <HeroSection />
+        <FeaturesSection />
         <BestSellingProductList />
         <FashionSection />
         <BestSellingProductList type="showcase" />

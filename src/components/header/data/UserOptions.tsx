@@ -1,6 +1,12 @@
+import { ReactElement } from "react";
 import { TbShoppingCart, TbUserCircle } from "react-icons/tb";
 
-export const userOptions = [
+interface UserOptions {
+  name: string;
+  icon: ReactElement
+}
+
+export const userOptions: UserOptions[] = [
   {
     name: "shopping",
     icon: (
