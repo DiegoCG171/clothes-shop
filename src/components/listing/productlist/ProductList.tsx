@@ -22,7 +22,7 @@ export const ProductList = ({ products }: ProductListProps) => {
     <>
       <List
         grid={{
-          gutter: 16, xs: 1, sm: 2, md: 3, lg: 3, xl: 3, xxl: 3, }}
+          gutter: 16, xs: 1, sm: 2, md: 3, lg: 3, xl: 3, xxl: 3, }} //responsivaaa
         dataSource={currentProducts}
         renderItem={(item) => (
           <List.Item>
