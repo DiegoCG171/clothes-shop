@@ -1,3 +1,17 @@
 @import url('./base/reset.css');
 @import url('./base/base.css');
+
+@import url('./components/common/call-to-action.css');
+
 @import url('./components/header/header.css');
+
+@import url('./components/hero-section/hero-text.css');
+@import url('./components/hero-section/hero-image.css');
+@import url('./components/hero-section/hero-section.css');
+
+@import url('./components/features-section/features-section.css');
+
+@import url('./components/fashion-section/fashion-section.css');
+
+@import url('./components/auth/login/login.css');
+@import url('./components/auth/register/register.css');

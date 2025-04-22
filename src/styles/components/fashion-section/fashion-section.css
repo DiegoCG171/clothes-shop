@@ -1,0 +1,37 @@
+.fashion-section {
+  width: 100%;
+  margin-top: 48px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  background: linear-gradient(
+    90deg,
+    #f6f6f6 11.25%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.fashion-section-title {
+  color: #000;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding: top 52px;
+}
+
+.fashion-section-text {
+  color: #5c5f6a;
+  margin-top: 24px;
+  margin-bottom: 32px !important;
+  width: 420px;
+}
+
+.fashion-section-image-container {
+  text-align: right;
+}
+
+.fashion-section-image-container-img {
+  width: 225px;
+  margin-right: 80px;
+}
