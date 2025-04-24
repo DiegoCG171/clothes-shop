@@ -1,3 +1,6 @@
+
+import { ProductList } from "../components/listing/productlist/ProductList"; // Ajusta la ruta si es diferente
+import { products } from "../components/listing/productlist/ProductListData";
 import { useState } from 'react';
 import { FilterHeader } from "../components/filters/FilterHeader";
 
@@ -23,6 +26,8 @@ export const ProductListPage = () => {
 
   return (
     <>
+    <h2>Todos los productos</h2>
+    <ProductList products={products} />
       <FilterHeader
         filters={filters}
         onRemoveFilter={handleRemoveFilter}
