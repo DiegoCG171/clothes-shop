@@ -21,7 +21,7 @@ export const mainRoutes: Route[] = [
   },
   {
     path: "/categories",
-    element: <ProductListPage />,
+    element: <ProductListPage/>,
   },
   {
     path: "/product",
