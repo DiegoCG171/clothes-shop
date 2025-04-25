@@ -1,6 +1,6 @@
 
 export const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <div>Contac page</div>
   )
 }

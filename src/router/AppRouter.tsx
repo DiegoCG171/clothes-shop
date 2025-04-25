@@ -3,9 +3,11 @@ import { PublicRouter } from "./PublicRouter";
 import { AuthRouter } from "./AuthRouter";
 import { PrivateRouter } from "./PrivateRouter";
 import { MainRouter } from "./MainRouter";
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
 
 export const AppRouter = () => {
-  const idUser = "s";
+  const { id } = useSelector((state: RootState) => state.auth.user);
 
   return (
     <BrowserRouter
@@ -18,7 +20,7 @@ export const AppRouter = () => {
         <Route
           path="/auth/*"
           element={
-            <PublicRouter idUser={idUser}>
+            <PublicRouter idUser={id}>
               <AuthRouter />
             </PublicRouter>
           }
@@ -26,7 +28,7 @@ export const AppRouter = () => {
         <Route
           path="/*"
           element={
-            <PrivateRouter idUser={idUser}>
+            <PrivateRouter idUser={id}>
               <MainRouter />
             </PrivateRouter>
           }

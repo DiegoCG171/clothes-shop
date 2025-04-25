@@ -1,7 +1,5 @@
 import { Image, Space, Typography } from "antd";
 
-
-
 interface Props {
     img: string;
     title: string;
