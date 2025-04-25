@@ -1,5 +1,4 @@
-import { ProductFilter } from "../components/sidebar-de-filtros/Sidebar-de -filtros"
-
+import { ProductFilter } from "../components/sidebar-de-filtros/sidebar-de -filtros"
 
 export const ContactPage = () => {
   return (

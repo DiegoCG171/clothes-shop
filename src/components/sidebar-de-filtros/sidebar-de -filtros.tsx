@@ -6,7 +6,6 @@ export const ProductFilter = () => {
   
   return (
     <div className="product-filter">
-      {/* Categories Section */}
       <div className="filter-section">
         <h3>Categories</h3>
         <Checkbox.Group className="category-group">
