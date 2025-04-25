@@ -62,7 +62,6 @@ export const FilterHeader: React.FC<FilterHeaderProps> = ({
             <Select
               value={sortBy}
               onChange={(value) => onSortChange?.(value as SortOption)}
-              bordered={false}
               size="small"
               className="sort-select"
             >

@@ -16,4 +16,5 @@
 @import url('./components/auth/login/login.css');
 @import url('./components/auth/register/register.css');
 
-@import url('./components/Filters/FiltersHeader.css');
+@import url('./components/filters/FiltersHeader.css');
+@import url('./components/sidebar-de-filtros/sidebar-de-filtro.css');

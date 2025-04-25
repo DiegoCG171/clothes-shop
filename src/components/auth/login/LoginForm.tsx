@@ -1,13 +1,15 @@
-import { Button, Form, Input, Typography } from 'antd';
-// import './LoginForm.css';
+import { Button, Form, Input, Typography } from "antd";
+import { useDispatch } from "react-redux";
+import { onLogin } from "../../../store/auth/authSlice";
 
-const { Link, Text } = Typography;
+const { Link } = Typography;
 
 export const LoginForm = () => {
+  const dispatch = useDispatch();
   const [form] = Form.useForm();
 
-  const onFinish = (values: any) => {
-    console.log('Login values:', values);
+  const onFinish = () => {
+    dispatch(onLogin());
   };
 
   return (
@@ -16,12 +18,12 @@ export const LoginForm = () => {
       layout="vertical"
       onFinish={onFinish}
       requiredMark={false}
-      className="login-form"
+      // className="login-form"
     >
       <Form.Item
         label="Email"
         name="email"
-        rules={[{ required: true, message: 'Please enter your email' }]}
+        rules={[{ required: true, message: "Please enter your email" }]}
       >
         <Input />
       </Form.Item>
@@ -29,7 +31,7 @@ export const LoginForm = () => {
       <Form.Item
         label="Password"
         name="password"
-        rules={[{ required: true, message: 'Please enter your password' }]}
+        rules={[{ required: true, message: "Please enter your password" }]}
       >
         <Input.Password />
       </Form.Item>

@@ -1,9 +1,8 @@
 .filter-header {
   padding: 16px 0;
-  width: 813px;
-  height: 125px;
   position: relative;
   margin: 0 auto;
+  margin-bottom: 24px;
 }
 
 .applied-filters-label {
