@@ -1,10 +1,13 @@
 import React from 'react';
 import { Row, Col, Tag, Typography, Select, Space } from 'antd';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/store'; 
+import { setSortBy } from '../../store/sortSlice';
 
 const { Text } = Typography;
 const { Option } = Select;
 
-type Filter =  {
+type Filter = {
   name: string;
   value: string;
 };
@@ -14,8 +17,6 @@ type SortOption = 'Relevance' | 'Price: Low to High' | 'Price: High to Low' | 'N
 type FilterHeaderProps = {
   filters: Filter[];
   onRemoveFilter?: (filter: Filter) => void;
-  sortBy?: SortOption;
-  onSortChange?: (value: SortOption) => void;
   totalResults: number;
   currentPage: number;
   pageSize: number;
@@ -24,12 +25,17 @@ type FilterHeaderProps = {
 export const FilterHeader: React.FC<FilterHeaderProps> = ({
   filters,
   onRemoveFilter,
-  sortBy = 'Relevance',
-  onSortChange,
   totalResults,
   currentPage,
   pageSize,
 }) => {
+  const dispatch = useDispatch();
+  const sortBy = useSelector((state: RootState) => state.sort.sortBy);
+
+  const handleSortChange = (value: SortOption) => {
+    dispatch(setSortBy(value));
+  };
+
   const start = (currentPage - 1) * pageSize + 1;
   const end = Math.min(currentPage * pageSize, totalResults);
 
@@ -61,7 +67,7 @@ export const FilterHeader: React.FC<FilterHeaderProps> = ({
             <Text className="sort-label">SORT BY</Text>
             <Select
               value={sortBy}
-              onChange={(value) => onSortChange?.(value as SortOption)}
+              onChange={(value) => handleSortChange(value as SortOption)}
               size="small"
               className="sort-select"
             >
