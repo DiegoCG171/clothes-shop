@@ -8,22 +8,6 @@
   align-items: center;
 }
 
-.login-container input,
-.login-container .ant-input,
-.login-container .ant-input-password {
-  width: 320px;
-  height: 45px;
-  padding: 10px 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
-  font-size: 14px;
-}
-
-.login-container .ant-input-password input {
-  padding: 10px 15px;
-  height: 45px;
-}
 
 .login-container label {
   font-weight: 500;
@@ -99,4 +83,8 @@
 
 .ant-form-item-required::before {
   display: none !important;
+}
+
+.forgot-password-link {
+  margin-bottom: 16px;
 }
