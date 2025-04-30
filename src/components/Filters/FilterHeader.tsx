@@ -1,8 +1,8 @@
 import React from 'react';
 import { Row, Col, Tag, Typography, Select, Space } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../store/store'; 
-import { setSortBy } from '../../store/sortSlice';
+import { RootState } from '../../store/store';
+import { onSetSortBy } from '../../store/ui/uiSlice';
 
 const { Text } = Typography;
 const { Option } = Select;
@@ -30,10 +30,10 @@ export const FilterHeader: React.FC<FilterHeaderProps> = ({
   pageSize,
 }) => {
   const dispatch = useDispatch();
-  const sortBy = useSelector((state: RootState) => state.sort.sortBy);
+  const sortBy = useSelector((state: RootState) => state.ui.sortBy);
 
   const handleSortChange = (value: SortOption) => {
-    dispatch(setSortBy(value));
+    dispatch(onSetSortBy(value));
   };
 
   const start = (currentPage - 1) * pageSize + 1;

@@ -1,22 +1,30 @@
-import { createSlice } from "@reduxjs/toolkit";
+
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { Filter } from "../../pages";
 
-interface IntialState {
-    filters: Filter[];
+export type SortOption = 'Relevance' | 'Price: Low to High' | 'Price: High to Low' | 'Newest';
+
+interface UIState {
+  filters: Filter[];
+  sortBy: SortOption;
 }
 
-const initialState: IntialState = {
-    filters: []
-}
+const initialState: UIState = {
+  filters: [],
+  sortBy: 'Relevance'
+};
 
 export const uiSlice = createSlice({
-    name: 'ui',
-    initialState,
-    reducers: {
-        onSetFilters: (state, action) => {
-            state.filters = action.payload;
-        }
+  name: 'ui',
+  initialState,
+  reducers: {
+    onSetFilters: (state, action: PayloadAction<Filter[]>) => {
+      state.filters = action.payload;
+    },
+    onSetSortBy: (state, action: PayloadAction<SortOption>) => {
+      state.sortBy = action.payload;
     }
+  }
 });
 
-export const { onSetFilters } = uiSlice.actions
+export const { onSetFilters, onSetSortBy } = uiSlice.actions;
