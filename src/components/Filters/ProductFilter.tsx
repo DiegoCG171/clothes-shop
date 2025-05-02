@@ -1,20 +1,23 @@
 import { Button, Checkbox, Form, Radio, Slider, Space } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { onClearAllFilters, onSetFilters, ProductFilters } from "../../store/ui/uiSlice";
+import {
+  onClearAllFilters,
+  onSetFilters,
+  ProductFilters,
+} from "../../store/ui/uiSlice";
 import { useEffect } from "react";
 import { RootState } from "../../store/store";
 
-
 const defaultFilters: ProductFilters = {
   categories: [],
-  color: '',
-  size: '',
+  color: "",
+  size: "",
   price: [0, 100],
 };
 
 export const ProductFilter = () => {
   const dispatch = useDispatch();
-  const {productFilters} = useSelector((state: RootState) => state.ui)
+  const { productFilters } = useSelector((state: RootState) => state.ui);
   const [form] = Form.useForm();
 
   useEffect(() => {
@@ -24,8 +27,8 @@ export const ProductFilter = () => {
   const handleFilter = (values: ProductFilters) => {
     const filters = {
       categories: values.categories || [],
-      color: values.color || '',
-      size: values.size || '',
+      color: values.color || "",
+      size: values.size || "",
       price: values.price || [0, 100],
     };
     dispatch(onSetFilters(filters));
@@ -38,7 +41,11 @@ export const ProductFilter = () => {
 
   return (
     <div className="product-filter">
-      <Form form={form} initialValues={defaultFilters} onValuesChange={(_, allValues) => handleFilter(allValues)}>
+      <Form
+        form={form}
+        initialValues={defaultFilters}
+        onValuesChange={(_, allValues) => handleFilter(allValues)}
+      >
         <div className="filter-section">
           <h3>Categories</h3>
           <Form.Item name="categories">
@@ -54,7 +61,6 @@ export const ProductFilter = () => {
             </Checkbox.Group>
           </Form.Item>
         </div>
-
         <div className="filter-section">
           <h3>Color</h3>
           <div className="color-options">

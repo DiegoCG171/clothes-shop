@@ -27,13 +27,13 @@ export const ProductListPage = () => {
       <Col sm={{span: 6}} xxl={{span: 4}} style={{ padding: 0 }}>
         <ProductFilter />
       </Col>
-      <Col sm={{span: 16, offset: 2}} xxl={{span: 18, offset: 2}}>
+      <Col sm={{span: 16, offset: 2}} xxl={{span: 18, offset: 1}}>
         <FilterHeader
           filters={tags}
           onRemoveFilter={handleRemoveFilter}
           sortBy={sortBy}
           onSortChange={handleSortBy}
-          totalResults={36}
+          totalResults={filteredProducts.length}
           currentPage={1}
           pageSize={9}
         />

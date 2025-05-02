@@ -19,7 +19,7 @@ export const products: Product[] = [
     category: 'Perfume',
     color: 'blue-dark',
     size: 'XL',
-    createdAt: "2023-04-01T12:00:00Z" // Fecha de creación
+    createdAt: "2023-04-01T12:00:00Z"
   },
   {
     img: Cover8,
@@ -30,7 +30,7 @@ export const products: Product[] = [
     category: 'Shoe',
     color: 'blue',
     size: 'XXL',
-    createdAt: "2023-03-15T12:00:00Z" // Fecha de creación
+    createdAt: "2023-03-15T12:00:00Z"
   },
   {
     img: Cover6,
@@ -41,7 +41,7 @@ export const products: Product[] = [
     category: 'Handbag',
     color: 'blue',
     size: 'L',
-    createdAt: "2023-03-05T12:00:00Z" // Fecha de creación
+    createdAt: "2023-03-05T12:00:00Z"
   },
   {
     img: Cover7,
@@ -52,7 +52,7 @@ export const products: Product[] = [
     category: 'Handbag',
     color: 'blue-dark',
     size: 'L',
-    createdAt: "2023-04-12T12:00:00Z" // Fecha de creación
+    createdAt: "2023-04-12T12:00:00Z"
   },
   {
     img: Cover6,
@@ -63,7 +63,7 @@ export const products: Product[] = [
     category: 'Perfume',
     color: 'green',
     size: 'M',
-    createdAt: "2023-01-20T12:00:00Z" // Fecha de creación
+    createdAt: "2023-01-20T12:00:00Z"
   },
   {
     img: Cover0,
@@ -74,7 +74,7 @@ export const products: Product[] = [
     category: 'Trousers',
     color: 'green',
     size: 'M',
-    createdAt: "2023-02-10T12:00:00Z" // Fecha de creación
+    createdAt: "2023-02-10T12:00:00Z"
   },
   {
     img: Cover4,
@@ -85,7 +85,7 @@ export const products: Product[] = [
     category: 'Hat',
     color: 'yellow',
     size: 'S',
-    createdAt: "2023-04-08T12:00:00Z" // Fecha de creación
+    createdAt: "2023-04-08T12:00:00Z"
   },
   {
     img: Cover3,
@@ -96,7 +96,7 @@ export const products: Product[] = [
     category: 'Shoe',
     color: 'yellow',
     size: 'M',
-    createdAt: "2023-03-25T12:00:00Z" // Fecha de creación
+    createdAt: "2023-03-25T12:00:00Z"
   },
   {
     img: Cover5,
@@ -107,7 +107,7 @@ export const products: Product[] = [
     category: 'Thermos',
     color: 'blue',
     size: 'S',
-    createdAt: "2023-04-02T12:00:00Z" // Fecha de creación
+    createdAt: "2023-04-02T12:00:00Z"
   },
   {
     img: Cover1,
@@ -118,6 +118,6 @@ export const products: Product[] = [
     category: 'Trousers',
     color: 'yellow',
     size: 'S',
-    createdAt: "2023-03-30T12:00:00Z" // Fecha de creación
+    createdAt: "2023-03-30T12:00:00Z"
   }
 ];

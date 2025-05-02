@@ -21,8 +21,8 @@ interface IntialState {
 const initialState: IntialState = {
   productFilters: {
     categories: [],
-    color: null,
-    size: null,
+    color: '',
+    size: '',
     price: [0, 1000],
   },
   sortBy: 'Relevance'
@@ -38,8 +38,8 @@ export const uiSlice = createSlice({
     onClearAllFilters: (state) => {
       state.productFilters = {
         categories: [],
-        color: null,
-        size: null,
+        color: '',
+        size: '',
         price: [0, 1000],
       };
     },
@@ -62,7 +62,7 @@ export const uiSlice = createSlice({
       }
     },
     onSortBy: (state, action: PayloadAction<string>) => {
-      state.sortBy =action.payload;
+      state.sortBy = action.payload;
     }
   },
 });
