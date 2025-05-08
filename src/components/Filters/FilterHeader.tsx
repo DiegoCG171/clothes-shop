@@ -1,20 +1,24 @@
-import React from 'react';
-import { Row, Col, Tag, Typography, Select, Space } from 'antd';
+import React from "react";
+import { Row, Col, Tag, Typography, Select, Space } from "antd";
 
 const { Text } = Typography;
 const { Option } = Select;
 
-type Filter =  {
+type Filter = {
   name: string;
   value: string;
 };
 
-type SortOption = 'Relevance' | 'Price: Low to High' | 'Price: High to Low' | 'Newest';
+type SortOption =
+  | "Relevance"
+  | "Price: Low to High"
+  | "Price: High to Low"
+  | "Newest";
 
 type FilterHeaderProps = {
   filters: Filter[];
   onRemoveFilter?: (filter: Filter) => void;
-  sortBy?: SortOption;
+  sortBy?: string;
   onSortChange?: (value: SortOption) => void;
   totalResults: number;
   currentPage: number;
@@ -24,7 +28,7 @@ type FilterHeaderProps = {
 export const FilterHeader: React.FC<FilterHeaderProps> = ({
   filters,
   onRemoveFilter,
-  sortBy = 'Relevance',
+  sortBy = "Relevance",
   onSortChange,
   totalResults,
   currentPage,
@@ -34,14 +38,21 @@ export const FilterHeader: React.FC<FilterHeaderProps> = ({
   const end = Math.min(currentPage * pageSize, totalResults);
 
   const getFilterValue = (filter: Filter) =>
-    typeof filter === 'string' ? filter : filter.value;
+    typeof filter === "string" ? filter : filter.value;
 
   return (
     <div className="filter-header">
-      <Row justify="space-between" align="middle">
-        <Col>
+      <Row
+        className="filter-header-row"
+        wrap={true}
+        align="middle"
+        justify="space-between"
+      >
+        <Col span={22}>
           <div className="filters-block">
-            <Text strong className="applied-filters-label">Applied Filters:</Text>
+            <Text strong className="applied-filters-label">
+              Applied Filters:
+            </Text>
             <Space size={[8, 8]} wrap className="filters-list">
               {filters.map((filter, index) => (
                 <Tag
@@ -56,8 +67,7 @@ export const FilterHeader: React.FC<FilterHeaderProps> = ({
             </Space>
           </div>
         </Col>
-        <Col>
-          <div className="sort-section">
+        <Col span={2}>
             <Text className="sort-label">SORT BY</Text>
             <Select
               value={sortBy}
@@ -70,7 +80,6 @@ export const FilterHeader: React.FC<FilterHeaderProps> = ({
               <Option value="Price: High to Low">Price: High to Low</Option>
               <Option value="Newest">Newest</Option>
             </Select>
-          </div>
         </Col>
       </Row>
       <Row style={{ marginTop: 8 }}>

@@ -1,7 +1,7 @@
 import { List, Pagination } from "antd";
 import { BestSellingProductItem } from "../../products/BestSellingProductItem";
-import { Product } from "./ProductListData";
 import { useState } from "react";
+import { Product } from "../../../store/products/interfaces/products.interface";
 
 interface ProductListProps {
   products: Product[];
@@ -9,7 +9,7 @@ interface ProductListProps {
 
 export const ProductList = ({ products }: ProductListProps) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 10;
+  const pageSize = 8;
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
