@@ -1,11 +1,11 @@
 import { ProductList } from "../components/listing/productlist/ProductList"; // Ajusta la ruta si es diferente
 import { products } from "../components/listing/productlist/ProductListData";
 import { useEffect, useState } from "react";
-import { FilterHeader } from "../components/filters/FilterHeader";
 import { Col, Row } from "antd";
-import { ProductFilter } from "../components/filters/ProductFilter";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
+import { ProductFilter } from "../components/Filters/ProductFilter";
+import { FilterHeader } from "../components/Filters/FilterHeader";
 
 export type Filter = {
   name: string;

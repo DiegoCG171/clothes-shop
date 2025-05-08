@@ -2,77 +2,78 @@ import { Checkbox, Form, Radio, Slider, Space } from "antd";
 import { useDispatch } from "react-redux";
 import { onSetFilters } from "../../store/ui/uiSlice";
 
+const categories = ["Perfume", "Trousers", "Shoe", "Handbag", "Hat", "Thermos"];
+const colors = ["blue", "yellow", "green", "blue-dark"];
+const sizes = ["S", "M", "L", "XL", "XXL"];
+
+
 export const ProductFilter = () => {
   const dispatch = useDispatch()
 
 
   const handleFilter = (values: any) => {
 
-    const filtersMap = values.categories.map( (category: string) => ({
+    const filtersMap = values.categories.map((category: string) => ({
       name: 'Category', value: category
     }))
     dispatch(onSetFilters(filtersMap))
   }
 
+
   return (
     <div className="product-filter">
-      <Form onValuesChange={(values) => handleFilter(values) }>
+      <Form onValuesChange={(values) => handleFilter(values)}>
         <div className="filter-section">
           <h3>Categories</h3>
           <Form.Item name="categories">
             <Checkbox.Group>
               <Space direction="vertical">
-                <Checkbox value="Perfume">Perfume</Checkbox>
-                <Checkbox value="Trousers">Trousers</Checkbox>
-                <Checkbox value="Shoe">Shoe</Checkbox>
-                <Checkbox value="Handbag">Handbag</Checkbox>
-                <Checkbox value="Hat">Hat</Checkbox>
-                <Checkbox value="Thermos">Thermos</Checkbox>
+                {categories.map((category) => (
+                  <Checkbox key={category} value={category}>
+                    {category}
+                  </Checkbox>
+                ))}
               </Space>
             </Checkbox.Group>
           </Form.Item>
         </div>
 
+        
         <div className="filter-section">
           <h3>Color</h3>
+          <Form.Item name="color">
           <div className="color-options">
             <Radio.Group defaultValue="blue">
-              <Radio.Button value="blue" className="color-circle blue" />
-              <Radio.Button value="yellow" className="color-circle yellow" />
-              <Radio.Button value="green" className="color-circle green" />
-              <Radio.Button
-                value="blue-dark"
-                className="color-circle blue-dark"
-              />
+              {colors.map((color) => (
+                <Radio.Button
+                  key={color}
+                  value={color}
+                  className={`color-circle ${color}`}
+                />
+              ))}
             </Radio.Group>
           </div>
+          </Form.Item>
         </div>
 
         <div className="filter-section">
           <h3>Size</h3>
+          <Form.Item name="size">
           <Radio.Group defaultValue="S" buttonStyle="solid">
             <Space className="size-options">
-              <Radio.Button value="S" className="size-button">
-                S
-              </Radio.Button>
-              <Radio.Button value="M" className="size-button">
-                M
-              </Radio.Button>
-              <Radio.Button value="L" className="size-button">
-                L
-              </Radio.Button>
-              <Radio.Button value="XL" className="size-button">
-                XL
-              </Radio.Button>
-              <Radio.Button value="XXL" className="size-button">
-                XXL
-              </Radio.Button>
+              {sizes.map((size) => (
+                <Radio.Button key={size} value={size} className="size-button">
+                  {size}
+                </Radio.Button>
+              ))}
             </Space>
           </Radio.Group>
+          </Form.Item>
         </div>
 
         <div className="filter-section">
           <h3>Price</h3>
+          <Form.Item name="price">
           <div className="price-slider">
             <Slider
               range
@@ -85,6 +86,7 @@ export const ProductFilter = () => {
               }}
             />
           </div>
+          </Form.Item>
         </div>
       </Form>
     </div>
