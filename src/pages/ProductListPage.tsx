@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { ProductList } from "../components/listing/productlist/ProductList"; // Ajusta la ruta si es diferente
 import { products } from "../components/listing/productlist/ProductListData";
 import { useEffect, useState } from "react";
@@ -12,17 +12,6 @@ export type Filter = {
   name: string;
   value: string;
 };
-=======
-import { ProductList } from "../components/listing/productlist/ProductList";
-import { FilterHeader } from "../components/filters/FilterHeader";
-import { Col, Row } from "antd";
-import { ProductFilter } from "../components/filters/ProductFilter";
-import { useDispatch, useSelector } from "react-redux";
-import { selectFilteredProducts } from "../store/products/productSlice";
-import { RootState } from "../store/store";
-import { formatFiltersForTags } from "../helpers/formatFiltersForTags";
-import { onRemoveFilter, onSortBy, Tag } from "../store/ui/uiSlice";
->>>>>>> 199db46ea3f128ede938e99e2d57d5a8e9162423
 
 export const ProductListPage = () => {
   const dispatch = useDispatch()
