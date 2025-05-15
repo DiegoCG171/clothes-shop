@@ -1,10 +1,10 @@
 
-import ProductDetails from '../components/product-details/ProductDetails'; // Ajusta la ruta según tu estructura
+import ProductDetails from '../components/product-details/ProductDetails';
 
 export const AboutPage = () => {
   return (
     <div style={{ padding: 24 }}>
-      <ProductDetails />
+      <ProductDetails  />
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import LogoMark from "../../assets/Logomark.svg";
 import LogoFooter from "../../assets/LogomarkFooter.svg";
 
@@ -6,12 +7,14 @@ interface Props {
 }
 
 export const Logo = ({ type = "header" }: Props) => {
+  const navigate = useNavigate()
   return (
     <div
       style={{
         display: "flex",
         alignItems: "center",
       }}
+      onClick={() => navigate('/dashboard')}
     >
       <img
         src={type === "header" ? LogoMark : LogoFooter}

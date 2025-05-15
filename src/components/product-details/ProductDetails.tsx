@@ -133,7 +133,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ className = '', style }
             <Button
               icon={<HeartOutlined />}
               className="wishlist-button"
-              style={{ width: 43, height: 43, borderRadius: 4 }}
+              style={{ width: 43, height: 43, borderRadius: 4, alignSelf: "end" }}
             />
           </div>
 

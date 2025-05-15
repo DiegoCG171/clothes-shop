@@ -7,8 +7,13 @@ import { Logo } from "../layout";
 import { userOptions } from "./data/UserOptions";
 import { useEffect, useState } from "react";
 import { capitalizeString } from "../../helpers/capitalizeString";
+import { mainRoutes } from "../../router/routes";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
+import { ItemType } from "antd/es/menu/interface";
 
 export const Header = () => {
+  const {user} = useSelector( (state: RootState) => state.auth )
   const navigate = useNavigate();
   const location = useLocation();
   const [breadcrumbs, setBreadcrumbs] = useState([
@@ -16,9 +21,10 @@ export const Header = () => {
       title: "Ecommerce",
     },
   ]);
+  const [menuListItems, setmenuListItems] = useState<ItemType[]>([]);
 
   const handleNavigate = (path: string) => {
-    navigate(`/${path}`);
+    navigate(`${path}`);
   };
 
   useEffect(() => {
@@ -33,6 +39,21 @@ export const Header = () => {
     ])
   }, [location]);
 
+  useEffect(() => {
+    
+    const filteredRoutes = mainRoutes.filter(  route => route.roles?.includes(user.role));
+
+    const filteredMenuItems = menuItems.filter( items => {
+      const route = filteredRoutes.find( route => route.path === items?.key )
+
+      return route
+    } )
+    console.log(filteredMenuItems)
+    setmenuListItems(filteredMenuItems)
+    
+  }, [user.role]);
+
+
   return (
     <Flex justify="center" vertical style={{ marginBottom: 48 }}>
       <Row className="header" align="middle" style={{ marginBottom: 48 }}>
@@ -43,7 +64,7 @@ export const Header = () => {
           <Menu
             mode="horizontal"
             style={{ width: 320 }}
-            items={menuItems}
+            items={menuListItems}
             onClick={(item) => handleNavigate(item.key)}
           />
         </Col>

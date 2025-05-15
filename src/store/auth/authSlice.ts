@@ -4,7 +4,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     user: {
         id: '',
-        name: ''
+        name: '',
+        role: ''
     },
     token: ''
 }
@@ -16,6 +17,7 @@ export const authSlice = createSlice({
         onLogin: (state) => {
             state.user.id = '01'
             state.user.name = 'Diego'
+            state.user.role = "admin"
             state.token = '0as0d0asd9123000---asdasd'
         },
         onLogout: (state) => {
