@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
 export const AppRouter = () => {
-  const { id } = useSelector((state: RootState) => state.auth.user);
+  const { id,  } = useSelector((state: RootState) => state.auth.user);
 
   return (
     <BrowserRouter
