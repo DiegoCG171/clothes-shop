@@ -27,7 +27,7 @@ const cartSlice = createSlice({
           item.color === action.payload.color &&
           item.size === action.payload.size
       );
-
+      
       if (existing) {
         existing.quantity += action.payload.quantity;
       } else {

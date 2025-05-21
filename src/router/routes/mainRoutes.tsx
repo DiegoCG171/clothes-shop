@@ -10,10 +10,12 @@ import {
 import { JSX } from "react";
 import AdminDashboard from "../../pages/AdminDashboard";
 
+type Roles = 'admin' | 'user' | 'suport' | 'tester';
+
 export interface RouteInterface {
   path: string;
   element: JSX.Element;
-  roles?: string[]
+  roles?: Roles[]
 }
 
 export const mainRoutes: RouteInterface[] = [
@@ -30,7 +32,7 @@ export const mainRoutes: RouteInterface[] = [
   {
     path: "/product",
     element: <ProductPage />,
-    roles: ['user']
+    roles: ['user','suport']
   },
   {
     path: "/profile",
@@ -45,12 +47,12 @@ export const mainRoutes: RouteInterface[] = [
   {
     path: "/about",
     element: <AboutPage />,
-    roles: [ 'user']
+    roles: [ 'user','tester']
   },
   {
     path: "/contact",
     element: <ContactPage />,
-    roles: ['user']
+    roles: ['user','admin','suport']
   },
   {
     path: "/dashboard",
